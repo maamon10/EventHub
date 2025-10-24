@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EventHub-About</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+.section-title {
+  color: #00bfff; 
+  font-weight: 700;
+}
+
+.about-section {
+  background: linear-gradient(to bottom, rgba(0, 50, 100, 0.2), transparent);
+  border-radius: 20px;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.about-section p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #e0e0e0;
+  opacity: 0.8;
+}
+
+.vision-box {
+  background-color: rgba(10, 25, 50, 0.6);
+  border: 1px solid rgba(0, 123, 255, 0.2);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem auto 0;
+  max-width: 600px;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.05);
+}
+
+.team-section {
+  background-color: #0d1b2a; 
+  border-radius: 25px;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.team-card {
+  background-color: #0f263d;
+  border: 1px solid #004080;
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+}
+
+.policy-item {
+  background-color: #0e1926;
+  border: 1px solid #003366;
+  border-radius: 15px;
+  padding: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
+
+.policy-item:hover {
+  background-color: #12253d;
+  transform: translateY(-3px);
+}
+
+.policy-item i {
+  font-size: 1.8rem;
+  color: #00bfff;
+  margin-right: 15px;
+}
+
+.about-section {
+  background: linear-gradient(160deg, #0a0a10 0%, #0f172a 40%, #1e3a8a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(33, 150, 243, 0.15), transparent 70%);
+  z-index: 1;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #60a5fa, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-dark-blue {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  transition: all 0.3s ease;
+}
+
+.bg-dark-blue:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+.section-title {
+  letter-spacing: 1px;
+}
+
+.section-subtitle {
+  color: #60a5fa;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+
+.lead {
+  color: #e5e9f2;
+}
+   
+
+.team-section {
+  background: linear-gradient(160deg, #0a0a10 0%, #0f172a 50%, #1e3a8a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.team-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at bottom left, rgba(37, 99, 235, 0.15), transparent 70%);
+  z-index: 1;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #60a5fa, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.team-card {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.team-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
+  border-color: #3b82f6;
+}
+
+.team-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #60a5fa;
+  font-size: 2.5rem;
+  transition: all 0.4s ease;
+}
+
+.team-card:hover .team-avatar {
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+}
+
+.section-title {
+  letter-spacing: 1px;
+}
+
+.text-light-50 {
+  color: rgba(255, 255, 255, 0.6);
+}
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top py-3">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">EventHub</a>
+    <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="bi bi-list fs-2"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="about-section py-5 text-center text-light position-relative overflow-hidden mt-5">
+  <div class="container position-relative z-2">
+    
+    <h1 class="section-title display-5 fw-bold mb-4 text-gradient">
+      About EventHub
+    </h1>
+
+    <p class="lead mx-auto mb-5 opacity-75" style="max-width: 750px;">
+      World Fusion Event aims to support local events and new talents by providing an easy platform 
+      to reach audiences and organize events efficiently.
+    </p>
+
+    <div class="vision-box rounded-4 shadow-lg p-5 mx-auto bg-dark-blue">
+      <h2 class="section-subtitle fw-bold mb-3 text-primary">
+        Event Publishing Policies
+      </h2>
+      <p class="opacity-75 mb-0" style="max-width:700px; margin:auto;">
+        To ensure quality content and fair opportunities, World Fusion Event follows these guidelines:
+      </p>
+    </div>
+  </div>
+
+  <div class="about-bg"></div>
+</section>
+
+   
+
+<section class="team-section py-5 text-center text-light position-relative overflow-hidden">
+  <div class="container position-relative z-2">
+    
+    <h2 class="section-title mb-5 text-gradient">Our Team</h2>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4 col-sm-6">
+        <div class="team-card p-4 rounded-4 shadow-lg">
+          <div class="team-avatar mx-auto mb-3">
+            <i class="bi bi-person-circle"></i>
+          </div>
+          <h5 class="fw-semibold mb-1 text-primary">mamon_206241 <span class="text-light-50">C5</span></h5>
+          <p class="small opacity-75">ITE Student</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="team-card p-4 rounded-4 shadow-lg">
+          <div class="team-avatar mx-auto mb-3">
+            <i class="bi bi-code-slash"></i>
+          </div>
+          <h5 class="fw-semibold mb-1 text-primary">mohammad_315266 <span class="text-light-50">C5</span></h5>
+          <p class="small opacity-75">ITE Student</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="team-card p-4 rounded-4 shadow-lg">
+          <div class="team-avatar mx-auto mb-3">
+            <i class="bi bi-laptop"></i>
+          </div>
+          <h5 class="fw-semibold mb-1 text-primary">obada_260759 <span class="text-light-50">C9</span></h5>
+          <p class="small opacity-75">ITE Student</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="team-card p-4 rounded-4 shadow-lg">
+          <div class="team-avatar mx-auto mb-3">
+            <i class="bi bi-laptop"></i>
+          </div>
+          <h5 class="fw-semibold mb-1 text-primary">nibal_162939 <span class="text-light-50">C3</span></h5>
+          <p class="small opacity-75">ITE Student</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="team-card p-4 rounded-4 shadow-lg">
+          <div class="team-avatar mx-auto mb-3">
+            <i class="bi bi-laptop"></i>
+          </div>
+          <h5 class="fw-semibold mb-1 text-primary">zainab_197908 <span class="text-light-50">C9</span></h5>
+          <p class="small opacity-75">ITE Student</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="team-bg"></div>
+</section>
+
+
+
+<footer class="bg-dark text-light pt-5 pb-3">
+  <div class="container">
+    <div class="row gy-4 text-center text-md-start align-items-start">
+      
+      <div class="col-md-4">
+        <h5 class="fw-bold mb-3 text-uppercase " data-en="About EventHub" data-ar="ايفينت هاب">
+          About EventHub
+        </h5>
+        <p class="small text-secondary" 
+           data-en="Your first platform to explore local events — from music and sports to culture and education."
+           data-ar="منصتك الأولى لاكتشاف الفعاليات المحلية — من الموسيقى والرياضة إلى الثقافة والتعليم.">
+          Your first platform to explore local events — from music and sports to culture and education.
+        </p>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="fw-bold mb-3 text-uppercase " data-en="Contact Us" data-ar="اتصل بنا">
+          Contact Us
+        </h5>
+        <ul class="list-unstyled small text-secondary mb-0">
+          <li data-en="Email:" data-ar="البريد الإلكتروني:">
+            <i class="bi bi-envelope-fill  me-2"></i>
+            <a href="mailto:EventHub@email.com"
+               class="text-light text-decoration-none">
+              EventHub@email.com
+            </a>
+          </li>
+          <li class="mt-2" data-en="Phone:" data-ar="الهاتف:">
+            <i class="bi bi-telephone-fill  me-2"></i>
+            +963 987654321
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="fw-bold mb-3 text-uppercase " data-en="Follow Us" data-ar="تابعنا">
+          Follow Us
+        </h5>
+        <div class="d-flex justify-content-center justify-content-md-start gap-3 fs-4">
+          <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="my-4 border-secondary opacity-25">
+
+    <div class="text-center small text-secondary" 
+         data-en="© 2025 EventHub — All Rights Reserved" 
+         data-ar="© 2025   ايفينت هاب — جميع الحقوق محفوظة">
+      © 2025 EventHub — All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+<button id="scrollTopBtn"><i class="bi bi-arrow-up"></i></button>
+
+<script >
+document.addEventListener("DOMContentLoaded", () => {
+      const scrollBtn = document.getElementById("scrollTopBtn");
+      if (!scrollBtn) return;
+      scrollBtn.style.display = "flex";
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

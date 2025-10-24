@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EventHub-Event Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+  .event-page {
+    background: radial-gradient(circle at top left, #001a33 0%, #000 100%);
+  }
+
+  .event-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2.5rem;
+  }
+  @media (max-width: 992px) {
+    .event-layout {
+      grid-template-columns: 1fr;
+    }
+}
+
+.event-card {
+  background: rgba(0, 0, 40, 0.65);
+  border: 1px solid rgba(0, 136, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+}
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(0, 136, 255, 0.4);
+}
+
+.event-image img {
+  max-height: 450px;
+  object-fit: cover;
+  filter: brightness(0.9);
+}
+.event-category-badge {
+  background: linear-gradient(90deg, #007bff, #00bfff);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 0 15px rgba(0, 180, 255, 0.3);
+}
+
+.event-content h1 {
+  letter-spacing: 1px;
+  color: #eaf6ff;
+}
+.event-content p {
+  font-size: 1rem;
+}
+
+.btn-gradient {
+  background: linear-gradient(90deg, #005eff, #00b4ff);
+  color: #fff;
+  border: none;
+  transition: all 0.4s ease;
+}
+.btn-gradient:hover {
+  background: linear-gradient(90deg, #007bff, #00d4ff);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.event-sidebar {
+  background: rgba(0, 0, 30, 0.7);
+  border: 1px solid rgba(0, 100, 255, 0.2);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 120, 255, 0.15);
+}
+.related-events {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.related-events .card {
+  background: rgba(0, 0, 50, 0.6);
+  border: 1px solid rgba(0, 140, 255, 0.2);
+  transition: all 0.3s ease;
+}
+.related-events .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
+}
+
+.text-light-50 {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+  </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg fixed-top py-3" >
+  <div class="container d-flex align-items-center justify-content-between">
+    <a class="navbar-brand fw-bold text-white fs-3 me-auto" href="index.html">
+      EventHub
+    </a>
+
+    <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+      aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list fs-2"></i>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link text-white fw-semibold active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container event-page py-5 mt-5">
+  <div class="event-layout">
+    
+    <div class="event-main">
+      <article class="event-card rounded-4 overflow-hidden shadow-lg border-0">
+        <div class="event-image position-relative">
+          <img id="event-img" class="img-fluid w-100" alt="Event Image">
+          <span id="event-category" class="badge event-category-badge position-absolute top-0 end-0 m-3 px-3 py-2">Category</span>
+        </div>
+
+        <div class="event-content p-4 p-md-5">
+          <h1 id="event-title" class="fw-bold display-6 mb-3 text-light"></h1>
+
+          <p class="text-light-50 mb-3">
+            <i class="bi bi-calendar-event me-2 text-info"></i>
+            <span id="event-date"></span>
+          </p>
+
+          <div class="d-flex flex-wrap gap-3 my-4">
+            <button class="btn btn-gradient rounded-pill px-4 py-2 fw-semibold shadow-sm">
+              <i class="bi bi-calendar-plus me-2"></i>Add to Calendar
+            </button>
+          </div>
+
+          <section class="mb-5">
+            <h2 class="h5 fw-semibold mb-3 text-info">Full Description</h2>
+            <p id="event-description" class="text-light opacity-75 lh-lg"></p>
+          </section>
+
+          <section class="mb-4">
+            <h3 class="h6 fw-semibold mb-3 text-info">Location</h3>
+            <p id="event-location" class="text-light opacity-75"></p>
+          </section>
+        </div>
+      </article>
+    </div>
+
+    <aside class="event-sidebar">
+      <h3 class="fw-semibold mb-4 text-light">Related Events</h3>
+      <div class="related-events" id="similar"></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="bg-dark text-light pt-5 pb-3">
+  <div class="container">
+    <div class="row gy-4 text-center text-md-start align-items-start">
+      
+      <div class="col-md-4">
+        <h5 class="fw-bold mb-3 text-uppercase " data-en="About EventHub" data-ar="ايفينت هاب">
+          About EventHub
+        </h5>
+        <p class="small text-secondary" 
+           data-en="Your first platform to explore local events — from music and sports to culture and education."
+           data-ar="منصتك الأولى لاكتشاف الفعاليات المحلية — من الموسيقى والرياضة إلى الثقافة والتعليم.">
+          Your first platform to explore local events — from music and sports to culture and education.
+        </p>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="fw-bold mb-3 text-uppercase " data-en="Contact Us" data-ar="اتصل بنا">
+          Contact Us
+        </h5>
+        <ul class="list-unstyled small text-secondary mb-0">
+          <li data-en="Email:" data-ar="البريد الإلكتروني:">
+            <i class="bi bi-envelope-fill  me-2"></i>
+            <a href="mailto:EventHub@email.com"
+               class="text-light text-decoration-none">
+              EventHub@email.com
+            </a>
+          </li>
+          <li class="mt-2" data-en="Phone:" data-ar="الهاتف:">
+            <i class="bi bi-telephone-fill me-2"></i>
+            +963 987654321
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="fw-bold mb-3 text-uppercase " data-en="Follow Us" data-ar="تابعنا">
+          Follow Us
+        </h5>
+        <div class="d-flex justify-content-center justify-content-md-start gap-3 fs-4">
+          <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="my-4 border-secondary opacity-25">
+
+    <div class="text-center small text-secondary" 
+         data-en="© 2025 EventHub — All Rights Reserved" 
+         data-ar="© 2025 ايفينت هاب — جميع الحقوق محفوظة">
+      © 2025 EventHub — All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+
+<script>
+ const allEvents = [
+      { 
+      title: "Taekwondo Championship in Syria",
+      location: "Damascus Sports Hall, Syria",
+      date: " 10 November 2025 – 3:00 PM", 
+      image: "assets/imgs/sport1.jpg",
+      description: "A national taekwondo event showcasing skilled Syrian athletes in powerful matches.", 
+      category: "Sport" 
+      },
+      { 
+      title: "Al-Ahrar Football Match in Syria",
+      location: "Aleppo International Stadium, Syria",
+      date: " 15 November 2025 – 5:00 PM", 
+      image: "assets/imgs/sport2.jpg",
+      description: "An exciting football match featuring Al-Ahrar team competing with strong spirit.", 
+      category: "Sport" 
+      },
+      { 
+      title: "Old Damascus Restaurant Experience",
+      location: "Old City, Damascus, Syria",
+      date: " 20 November 2025 – 7:00 PM", 
+      image: "assets/imgs/food1.jpg",
+      description: " A traditional dining event offering authentic Syrian dishes in a historic atmosphere.", 
+      category: "Food" 
+      },
+      { 
+      title: "Jannat Sahnaya Restaurant",
+      location: "Sahnaya, Rural Damascus, Syria",
+      date: "Night 22 November 2025 – 8:00 PM", 
+      image: "assets/imgs/food2.jpg",
+      description: " A delightful evening featuring delicious Syrian cuisine in a cozy, elegant setting.", 
+      category: "Food" 
+      },
+      { 
+      title: "Asala Concert at Damascus Opera House",
+      location: "Damascus Opera House, Syria ",
+      date: "18 December 2025 – 8:00 PM", 
+      image: "assets/imgs/music1.jpg",
+      description: "A stunning live performance by Asala showcasing her powerful voice and classic hits.", 
+      category: "Music" 
+      },
+      { 
+      title: "TakKAT Band Live in Damascus",
+      location: "Damascus Citadel, Syria",
+      date: " 24 August 2025 – 8:30 PM", 
+      image: "assets/imgs/music2.jpg",
+      description: " A lively concert by TakKAT Band blending traditional Syrian music with modern rhythms.", 
+      category: "Music" 
+      },
+      { 
+      title: "Damascus Grand Business Forum",
+      location: " Four Seasons Hotel, Damascus, Syria",
+      date: " 10 December 2025 – 11:00 AM", 
+      image: "assets/imgs/tech1.jpg",
+      description: "A gathering of top business leaders discussing investment and economic development in Syria.", 
+      category: "Tech" 
+      },
+      { 
+      title: "Damascus International Fair",
+      location: "Damascus Fairgrounds, Syria",
+      date:"1 December 2025 – 10:00 AM", 
+      image: "assets/imgs/cul1.jpg",
+      description: "A major exhibition showcasing Syrian innovation, culture, and global business opportunities.", 
+      category: "Culture" 
+      }
+      ,
+      { 
+      title: "Aleppo International Fair",
+      location: "Aleppo Exhibition Center, Syria",
+      date:" 5 December 2025 – 10:00 AM", 
+      image: "assets/imgs/cul2.jpg",
+      description: "A large trade and culture fair highlighting Aleppo’s heritage and modern industries.", 
+      category: "Culture" 
+      }
+    ];
+let currentEvent = JSON.parse(localStorage.getItem("selectedEvent")) || allEvents[0];
+
+function renderEvent(event) {
+  currentEvent = event;
+  localStorage.setItem("selectedEvent", JSON.stringify(event));
+
+  document.getElementById("event-img").src = event.image;
+  document.getElementById("event-title").textContent = event.title;
+  document.getElementById("event-date").textContent = event.date;
+  document.getElementById("event-location").textContent = event.location;
+  document.getElementById("event-description").textContent = event.description;
+  document.getElementById("event-category").textContent = event.category;
+
+  const similarContainer = document.getElementById("similar");
+  similarContainer.innerHTML = "";
+  const similarEvents = allEvents.filter(e => e.category === event.category && e.title !== event.title);
+
+  if (similarEvents.length > 0) {
+    similarEvents.forEach(sim => {
+      const col = document.createElement("div");
+      col.className = "col-12 similar-card";
+
+      col.innerHTML = `
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+          <div class="position-relative">
+            <img src="${sim.image}" class="card-img-top" alt="${sim.title}">
+            <span class="position-absolute top-0 end-0 m-2 badge">${sim.category}</span>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h6 class="fw-bold mb-2 text-truncate">${sim.title}</h6>
+            <p class="text-secondary small mb-3">${sim.location}</p>
+            <a href="#" class="btn btn-outline-primary btn-sm rounded-pill mt-auto">Details</a>
+          </div>
+        </div>
+      `;
+
+      col.querySelector(".btn").addEventListener("click", (e) => {
+        e.preventDefault();
+        renderEvent(sim);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      similarContainer.appendChild(col);
+    });
+  } else {
+    similarContainer.innerHTML = `<p class="text-muted">No similar events found.</p>`;
+  }
+}
+
+renderEvent(currentEvent);
+</script>
+
+
+
+<script src="assets/JS/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EventHub-Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top py-3">
+  <div class="container d-flex align-items-center">
+    <a class="navbar-brand fw-bold text-white fs-3" href="index.html" data-en="EventHub" data-ar="ايفينت هاب">EventHub</a>
+    <button class="navbar-toggler text-white border-0 ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list fs-2"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="events.html" data-en="Events" data-ar="الفعاليات">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html" data-en="About" data-ar="من نحن">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+      </ul>
+
+      <div class="lang-switch ms-3">
+        <div class="lang-btn" id="enBtn" title="English">
+          <img src="https://flagcdn.com/us.svg" alt="English Flag">
+        </div>
+        <div class="lang-btn" id="arBtn" title="Arabic">
+          <img src="https://flagcdn.com/sy.svg" alt="Arabic Flag">
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+<section class="team-section py-5 text-center mt-5">
+  <div class="container">
+    <h2 class="section-title mb-5">Our Team</h2>
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-2 col-6">
+        <div class="circle-member">
+          <div class="circle-avatar">M</div>
+          <h5>mamon_206241 C5</h5>
+          <p>ITE Student</p>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-6">
+        <div class="circle-member">
+          <div class="circle-avatar">M</div>
+          <h5>mohammad_315266 C5</h5>
+          <p>ITE Student</p>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-6">
+        <div class="circle-member">
+          <div class="circle-avatar">O</div>
+          <h5>obada_260759 C9</h5>
+          <p>ITE Student</p>
+        </div>
+      </div>
+       <div class="col-md-2 col-6">
+        <div class="circle-member">
+          <div class="circle-avatar">N</div>
+          <h5>nibal_162939 C3</h5>
+          <p>ITE Student</p>
+        </div>
+      </div>
+       <div class="col-md-2 col-6">
+        <div class="circle-member">
+          <div class="circle-avatar">Z</div>
+          <h5>zainab_197908 C9</h5>
+          <p>ITE Student</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5 text-light" data-en="Featured Events This Week" data-ar="أبرز الفعاليات لهذا الأسبوع">
+      Featured Events This Week
+    </h2>
+
+    <div id="featuredEventsCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <div class="event-slide" style="background-image: url('assets/imgs/sport2.jpg');">
+            <div class="overlay"></div>
+            <div class="carousel-caption d-block text-start">
+              <h5 data-en="Rock Music Concert" data-ar="مباراة الأحرار لكرة القدم في سوريا">Al-Ahrar Football Match in Syria</h5>
+              <p class="small mb-1" data-en="Aleppo International Stadium, Syria" data-ar="ملعب حلب الدولي، سوريا">Aleppo International Stadium, Syria</p>
+              <p class="small mb-2" data-en=" 15 November 2025 – 5:00 PM" data-ar="15 نوفمبر 2025 – 5:00 مساءً"> 15 November 2025 – 5:00 PM</p>
+              <p class="small" data-en=" An exciting football match featuring Al-Ahrar team competing with strong spirit." data-ar="مباراة كرة قدم مثيرة يتنافس فيها فريق الأحرار بروح قوية.">
+              </p>
+              <div class="mt-3 d-flex justify-content-between align-items-center">
+                <button class="btn btn-gradient btn-sm rounded-pill px-3" onclick="openFeaturedEvent(0)" data-en="Details" data-ar="التفاصيل">Details</button>
+                <span class="badge" data-en="Sport" data-ar="رياضة">Sport</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="event-slide" style="background-image: url('assets/imgs/food2.jpg');">
+            <div class="overlay"></div>
+            <div class="carousel-caption d-block text-start">
+              <h5 data-en="Corporate Meeting in Tower" data-ar="مطعم جنات صحنايا">Jannat Sahnaya Restaurant</h5>
+              <p class="small mb-1" data-en="Sahnaya, Rural Damascus, Syria" data-ar="صحنايا، ريف دمشق، سوريا"> Sahnaya, Rural Damascus, Syria</p>
+              <p class="small mb-2" data-en="22 November 2025 – 8:00 PM" data-ar="22 نوفمبر 2025 – 8:00 مساءً"> 22 November 2025 – 8:00 PM</p>
+              <p class="small" data-en="A delightful evening featuring delicious Syrian cuisine in a cozy, elegant setting." data-ar="أمسية ممتعة تضم أشهى المأكولات السورية في أجواء مريحة وأنيقة.">
+              
+              <div class="mt-3 d-flex justify-content-between align-items-center">
+                <button class="btn btn-gradient btn-sm rounded-pill px-3" onclick="openFeaturedEvent(1)" data-en="Details" data-ar="التفاصيل">Details</button>
+                <span class="badge" data-en="Food" data-ar="طعام">Food</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#featuredEventsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1);"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#featuredEventsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1);"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5 text-center bg-dark position-relative overflow-hidden">
+  <div class="container position-relative">
+    <h2 class="fw-bold mb-5  text-uppercase tracking-wide"
+        data-en="Quick Categories" data-ar="الفئات السريعة">
+      Quick Categories
+    </h2>
+
+    <div class="row justify-content-center g-4">
+      <div class="col-6 col-md-4 col-lg-2">
+        <a href="events.html" class="category-card" data-en="Sport" data-ar="رياضة">
+          <i class="bi bi-trophy-fill"></i>
+          <span>Sport</span>
+        </a>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <a href="events.html" class="category-card" data-en="Music" data-ar="موسيقى">
+          <i class="bi bi-music-note-beamed"></i>
+          <span>Music</span>
+        </a>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <a href="events.html" class="category-card" data-en="Food" data-ar="طعام">
+          <i class="bi bi-egg-fried"></i>
+          <span>Food</span>
+        </a>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <a href="events.html" class="category-card" data-en="Tech" data-ar="تقنية">
+          <i class="bi bi-cpu"></i>
+          <span>Tech</span>
+        </a>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <a href="events.html" class="category-card" data-en="Culture" data-ar="ثقافة">
+          <i class="bi bi-bank"></i>
+          <span>Culture</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="latest-events py-5">
+    <div class="container">
+      <h2 class="fw-bold mb-4 section-title text-center" data-en="Latest Events" data-ar="أحدث الفعاليات">Latest Events</h2>
+      <div class="row g-4" id="latestGrid"></div>
+    </div>
+</section>
+
+<footer class="bg-dark text-light pt-5 pb-3">
+  <div class="container">
+    <div class="row gy-4 text-center text-md-start align-items-start">
+      
+      <div class="col-md-4">
+        <h5 class="fw-bold mb-3 text-uppercase " data-en="About EventHub" data-ar="ايفينت هاب">
+          About EventHub
+        </h5>
+        <p class="small text-secondary" 
+           data-en="Your first platform to explore local events — from music and sports to culture and education."
+           data-ar="منصتك الأولى لاكتشاف الفعاليات المحلية — من الموسيقى والرياضة إلى الثقافة والتعليم.">
+          Your first platform to explore local events — from music and sports to culture and education.
+        </p>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="fw-bold mb-3 text-uppercase " data-en="Contact Us" data-ar="اتصل بنا">
+          Contact Us
+        </h5>
+        <ul class="list-unstyled small text-secondary mb-0">
+          <li data-en="Email:EventHub@email.com" data-ar="البريد الإلكتروني:EventHub@email.com">
+            <i class="bi bi-envelope-fill  me-2"></i>
+            <a href="mailto:EventHub@email.com"
+               class="text-light text-decoration-none">
+              EventHub@email.com
+            </a>
+          </li>
+          <li class="mt-2" data-en="Phone:+963 987654321" data-ar="الهاتف:+963 987654321">
+            <i class="bi bi-telephone-fill me-2"></i>
+            +963 987654321
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="fw-bold mb-3 text-uppercase " data-en="Follow Us" data-ar="تابعنا">
+          Follow Us
+        </h5>
+        <div class="d-flex justify-content-center justify-content-md-start gap-3 fs-4">
+          <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="my-4 border-secondary opacity-25">
+
+    <div class="text-center small text-secondary" 
+         data-en="© 2025 EventHub — All Rights Reserved" 
+         data-ar="© 2025 ايفينت هاب    — جميع الحقوق محفوظة">
+      © 2025 EventHub — All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+
+<button id="scrollTopBtn"><i class="bi bi-arrow-up"></i></button>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+        const scrollBtn = document.getElementById("scrollTopBtn");
+        if (!scrollBtn) return;
+        scrollBtn.style.display = "flex";
+        scrollBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+  });
+
+  const storedEvents = JSON.parse(localStorage.getItem("allEvents")) || [];
+  if (storedEvents.length === 0) {
+    const allEvents = [
+      { 
+      title: "Taekwondo Championship in Syria",
+      location: "Damascus Sports Hall, Syria",
+      date: " 10 November 2025 – 3:00 PM", 
+      image: "assets/imgs/sport1.jpg",
+      description: "A national taekwondo event showcasing skilled Syrian athletes in powerful matches.", 
+      category: "Sport" 
+      },
+      { 
+      title: "Al-Ahrar Football Match in Syria",
+      location: "Aleppo International Stadium, Syria",
+      date: " 15 November 2025 – 5:00 PM", 
+      image: "assets/imgs/sport2.jpg",
+      description: "An exciting football match featuring Al-Ahrar team competing with strong spirit.", 
+      category: "Sport" 
+      },
+      { 
+      title: "Old Damascus Restaurant Experience",
+      location: "Old City, Damascus, Syria",
+      date: " 20 November 2025 – 7:00 PM", 
+      image: "assets/imgs/food1.jpg",
+      description: " A traditional dining event offering authentic Syrian dishes in a historic atmosphere.", 
+      category: "Food" 
+      },
+      { 
+      title: "Jannat Sahnaya Restaurant",
+      location: "Sahnaya, Rural Damascus, Syria",
+      date: "Night 22 November 2025 – 8:00 PM", 
+      image: "assets/imgs/food2.jpg",
+      description: " A delightful evening featuring delicious Syrian cuisine in a cozy, elegant setting.", 
+      category: "Food" 
+      },
+      { 
+      title: "Asala Concert at Damascus Opera House",
+      location: "Damascus Opera House, Syria ",
+      date: "18 December 2025 – 8:00 PM", 
+      image: "assets/imgs/music1.jpg",
+      description: "A stunning live performance by Asala showcasing her powerful voice and classic hits.", 
+      category: "Music" 
+      },
+      { 
+      title: "TakKAT Band Live in Damascus",
+      location: "Damascus Citadel, Syria",
+      date: " 24 August 2025 – 8:30 PM", 
+      image: "assets/imgs/music2.jpg",
+      description: " A lively concert by TakKAT Band blending traditional Syrian music with modern rhythms.", 
+      category: "Music" 
+      },
+      { 
+      title: "Damascus Grand Business Forum",
+      location: " Four Seasons Hotel, Damascus, Syria",
+      date: " 10 December 2025 – 11:00 AM", 
+      image: "assets/imgs/tech1.jpg",
+      description: "A gathering of top business leaders discussing investment and economic development in Syria.", 
+      category: "Tech" 
+      },
+      { 
+      title: "Damascus International Fair",
+      location: "Damascus Fairgrounds, Syria",
+      date:"1 December 2025 – 10:00 AM", 
+      image: "assets/imgs/cul1.jpg",
+      description: "A major exhibition showcasing Syrian innovation, culture, and global business opportunities.", 
+      category: "Culture" 
+      }
+      ,
+      { 
+      title: "Aleppo International Fair",
+      location: "Aleppo Exhibition Center, Syria",
+      date:" 5 December 2025 – 10:00 AM", 
+      image: "assets/imgs/cul2.jpg",
+      description: "A large trade and culture fair highlighting Aleppo’s heritage and modern industries.", 
+      category: "Culture" 
+      }
+    ];
+    localStorage.setItem("allEvents", JSON.stringify(allEvents));
+  }
+
+  const events = JSON.parse(localStorage.getItem("allEvents")) || [];
+  const latestFive = events.slice(-5); 
+
+  const container = document.getElementById("latestGrid");
+  container.innerHTML = latestFive.map((ev, index) => `
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="event-card card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+        <img src="${ev.image}" class="card-img-top img-fluid" alt="${ev.title}">
+        <div class="card-body d-flex flex-column">
+          <h3 class="h6 fw-bold  mb-1">${ev.title}</h3>
+          <p class="small   mb-1">${ev.location}</p>
+          <p class="small   mb-2">${ev.date}</p>
+          <p class="card-text small  flex-grow-1">${ev.description}</p>
+          <div class="mt-3 d-flex justify-content-between align-items-center">
+            <button class="btn btn-gradient btn-sm rounded-pill px-3" onclick="openEvent(${events.indexOf(ev)})">Details</button>
+            <span class="badge bg-info text-dark px-3 py-2 rounded-pill">${ev.category}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+
+  function openEvent(index) {
+    const allEvents = JSON.parse(localStorage.getItem("allEvents")) || [];
+    const selected = allEvents[index];
+    if (selected) {
+      localStorage.setItem("selectedEvent", JSON.stringify(selected));
+      window.location.href = "event.html";
+    }
+  }
+
+const featuredEvents = [
+ 
+  { 
+  title: "Al-Ahrar Football Match in Syria",
+  location: "Aleppo International Stadium, Syria",
+  date: " 15 November 2025 – 5:00 PM", 
+  image: "assets/imgs/sport2.jpg",
+  description: "An exciting football match featuring Al-Ahrar team competing with strong spirit.", 
+  category: "Sport" 
+  },
+  { 
+  title: "Jannat Sahnaya Restaurant",
+  location: "Sahnaya, Rural Damascus, Syria",
+  date: "Night 22 November 2025 – 8:00 PM", 
+  image: "assets/imgs/food2.jpg",
+  description: " A delightful evening featuring delicious Syrian cuisine in a cozy, elegant setting.", 
+  category: "Food" 
+  },
+  { 
+  title: "TakKAT Band Live in Damascus",
+  location: "Damascus Citadel, Syria",
+  date: " 24 August 2025 – 8:30 PM", 
+  image: "assets/imgs/music2.jpg",
+  description: " A lively concert by TakKAT Band blending traditional Syrian music with modern rhythms.", 
+  category: "Music" 
+  }
+];
+  function openFeaturedEvent(index) {
+    const selected = featuredEvents[index];
+    if (selected) {
+      localStorage.setItem("selectedEvent", JSON.stringify(selected));
+      window.location.href = "event.html";
+    }
+  }
+
+  (function() {
+    function applyTranslation(lang) {
+      const htmlTag = document.documentElement;
+      const elements = document.querySelectorAll("[data-en]");
+      htmlTag.lang = lang;
+      htmlTag.dir = lang === "ar" ? "rtl" : "ltr";
+      elements.forEach(el => {
+        const val = el.getAttribute(`data-${lang}`);
+        if (val !== null) el.textContent = val;
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const enBtn = document.getElementById("enBtn");
+      const arBtn = document.getElementById("arBtn");
+
+      if (enBtn) enBtn.addEventListener("click", () => {
+        applyTranslation("en");
+        localStorage.setItem("language", "en");
+      });
+
+      if (arBtn) arBtn.addEventListener("click", () => {
+        applyTranslation("ar");
+        localStorage.setItem("language", "ar");
+      });
+
+      const savedLang = localStorage.getItem("language") || "en";
+      applyTranslation(savedLang);
+    });
+  })();
+
+</script>
+
+<script src="assets/JS/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

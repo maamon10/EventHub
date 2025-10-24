@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EventHub-All Events</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background: #0a0a0a; 
+      color: #f3f3f3;
+      font-family: 'Poppins', sans-serif;
+    }
+
+  .btn-gradient {
+    background: linear-gradient(90deg, #0055ff, #00bfff);
+    color: #fff;
+    border: none;
+    transition: 0.3s;
+  }
+
+  .btn-gradient:hover {
+    background: linear-gradient(90deg, #00bfff, #0055ff);
+    transform: scale(1.05);
+  }
+
+  .event-card {
+    background-color: #0d1b2a; 
+    color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  .event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  }
+
+  .badge {
+    background-color: #007bff !important;
+    color: #e0f0ff !important;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 6px 12px;
+  }
+
+  .bg-gradient-dark {
+    background: linear-gradient(135deg, #0a0a10 0%, #0f172a 50%, #1e3a8a 100%);
+  }
+
+  .form-control, .form-select {
+    transition: all 0.3s ease;
+  }
+
+  .form-control:focus, .form-select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+  }
+
+  .filter-card {
+    backdrop-filter: blur(6px);
+  }
+
+  .btn-primary {
+    background: linear-gradient(90deg, #2563eb, #1e40af);
+    border: none;
+    transition: 0.3s ease;
+  }
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+  transform: translateY(-2px);
+}
+
+  .text-light-50 {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+  .input-group-text i {
+    font-size: 1.1rem;
+  }
+    
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top py-3" >
+  <div class="container d-flex align-items-center">
+    <a class="navbar-brand fw-bold text-white fs-3" href="index.html">EventHub</a>
+
+    <button class="navbar-toggler text-white border-0 ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list fs-2"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link text-white fw-semibold active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container my-5 all-events" style="margin-top: 8rem !important;">
+  <h1 class="fw-bold mb-5 text-center text-gradient">All Events</h1>
+
+<div class="filter-card shadow-lg border-0 rounded-4 p-4 position-relative overflow-hidden bg-gradient-dark text-light">
+  <div class="filter-overlay"></div>
+
+  <form id="filterForm" class="row gy-4 gx-3 align-items-end position-relative z-2">
+    
+    <div class="col-12 col-lg-4">
+      <label class="form-label small fw-semibold text-uppercase text-light-50">Search</label>
+      <div class="input-group">
+        <span class="input-group-text bg-transparent border-0 text-info">
+          <i class="bi bi-search"></i>
+        </span>
+        <input type="search" id="searchInput" 
+               class="form-control rounded-pill px-4 py-2 bg-dark text-light border-secondary"
+               placeholder="Type keyword or title...">
+      </div>
+    </div>
+
+    <div class="col-6 col-md-3 col-lg-2">
+      <label class="form-label small fw-semibold text-uppercase text-light-50">Category</label>
+      <select id="catFilter" class="form-select rounded-pill px-3 py-2 bg-dark text-light border-secondary">
+        <option value="">All</option>
+        <option>Sport</option>
+        <option>Food</option>
+        <option>Music</option>
+        <option>Tech</option>
+        <option>Culture</option>
+      </select>
+    </div>
+
+    <div class="col-6 col-md-3 col-lg-2">
+      <label class="form-label small fw-semibold text-uppercase text-light-50">Date</label>
+      <input type="date" id="dateFilter" 
+             class="form-control rounded-pill px-4 py-2 bg-dark text-light border-secondary">
+    </div>
+
+    <div class="col-6 col-md-3 col-lg-2">
+      <label class="form-label small fw-semibold text-uppercase text-light-50">Location</label>
+      <input type="text" id="locFilter" 
+             class="form-control rounded-pill px-4 py-2 bg-dark text-light border-secondary" 
+             placeholder="City or venue">
+    </div>
+
+    <div class="col-6 col-md-3 col-lg-2 d-grid">
+      <button type="button" id="clearFilters" class="btn btn-primary rounded-pill py-2 fw-semibold">
+        <i class="bi bi-x-circle me-1"></i> Clear
+      </button>
+    </div>
+  </form>
+</div>
+
+  <section id="eventsList" class="row g-4 mt-5"></section>
+</main>
+
+
+
+
+<button id="scrollTopBtn" title="Back to top">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+
+<footer class="bg-dark text-light pt-5 pb-3">
+  <div class="container">
+    <div class="row gy-4 text-center text-md-start align-items-start">
+      
+      <div class="col-md-4">
+        <h5 class="fw-bold mb-3 text-uppercase " data-en="About EventHub" >
+          About EventHub
+        </h5>
+        <p class="small text-secondary" 
+           data-en="Your first platform to explore local events — from music and sports to culture and education."
+           data-ar="منصتك الأولى لاكتشاف الفعاليات المحلية — من الموسيقى والرياضة إلى الثقافة والتعليم.">
+          Your first platform to explore local events — from music and sports to culture and education.
+        </p>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="fw-bold mb-3 text-uppercase " data-en="Contact Us" data-ar="اتصل بنا">
+          Contact Us
+        </h5>
+        <ul class="list-unstyled small text-secondary mb-0">
+          <li data-en="Email:" data-ar="البريد الإلكتروني:">
+            <i class="bi bi-envelope-fill  me-2"></i>
+            <a href="mailto:EventHub@email.com"
+               class="text-light text-decoration-none">
+               EventHub@email.com
+             </a>
+          </li>
+          <li class="mt-2" data-en="Phone:" data-ar="الهاتف:">
+            <i class="bi bi-telephone-fill me-2"></i>
+            +963 987654321
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="fw-bold mb-3 text-uppercase " data-en="Follow Us" data-ar="تابعنا">
+          Follow Us
+        </h5>
+        <div class="d-flex justify-content-center justify-content-md-start gap-3 fs-4">
+          <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="my-4 border-secondary opacity-25">
+
+    <div class="text-center small text-secondary" 
+         data-en="© 2025 EventHub — All Rights Reserved" 
+         data-ar="© 2025 ايفينت هاب   — جميع الحقوق محفوظة">
+      © 2025 EventHub — All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+
+
+<script>
+
+   const allEvents = [
+      { 
+      title: "Taekwondo Championship in Syria",
+      location: "Damascus Sports Hall, Syria",
+      date: " 10 November 2025 – 3:00 PM", 
+      image: "assets/imgs/sport1.jpg",
+      description: "A national taekwondo event showcasing skilled Syrian athletes in powerful matches.", 
+      category: "Sport" 
+      },
+      { 
+      title: "Al-Ahrar Football Match in Syria",
+      location: "Aleppo International Stadium, Syria",
+      date: " 15 November 2025 – 5:00 PM", 
+      image: "assets/imgs/sport2.jpg",
+      description: "An exciting football match featuring Al-Ahrar team competing with strong spirit.", 
+      category: "Sport" 
+      },
+      { 
+      title: "Old Damascus Restaurant Experience",
+      location: "Old City, Damascus, Syria",
+      date: " 20 November 2025 – 7:00 PM", 
+      image: "assets/imgs/food1.jpg",
+      description: " A traditional dining event offering authentic Syrian dishes in a historic atmosphere.", 
+      category: "Food" 
+      },
+      { 
+      title: "Jannat Sahnaya Restaurant",
+      location: "Sahnaya, Rural Damascus, Syria",
+      date: "Night 22 November 2025 – 8:00 PM", 
+      image: "assets/imgs/food2.jpg",
+      description: " A delightful evening featuring delicious Syrian cuisine in a cozy, elegant setting.", 
+      category: "Food" 
+      },
+      { 
+      title: "Asala Concert at Damascus Opera House",
+      location: "Damascus Opera House, Syria ",
+      date: "18 December 2025 – 8:00 PM", 
+      image: "assets/imgs/music1.jpg",
+      description: "A stunning live performance by Asala showcasing her powerful voice and classic hits.", 
+      category: "Music" 
+      },
+      { 
+      title: "TakKAT Band Live in Damascus",
+      location: "Damascus Citadel, Syria",
+      date: " 24 August 2025 – 8:30 PM", 
+      image: "assets/imgs/music2.jpg",
+      description: " A lively concert by TakKAT Band blending traditional Syrian music with modern rhythms.", 
+      category: "Music" 
+      },
+      { 
+      title: "Damascus Grand Business Forum",
+      location: " Four Seasons Hotel, Damascus, Syria",
+      date: " 10 December 2025 – 11:00 AM", 
+      image: "assets/imgs/tech1.jpg",
+      description: "A gathering of top business leaders discussing investment and economic development in Syria.", 
+      category: "Tech" 
+      },
+      { 
+      title: "Damascus International Fair",
+      location: "Damascus Fairgrounds, Syria",
+      date:"1 December 2025 – 10:00 AM", 
+      image: "assets/imgs/cul1.jpg",
+      description: "A major exhibition showcasing Syrian innovation, culture, and global business opportunities.", 
+      category: "Culture" 
+      }
+      ,
+      { 
+      title: "Aleppo International Fair",
+      location: "Aleppo Exhibition Center, Syria",
+      date:" 5 December 2025 – 10:00 AM", 
+      image: "assets/imgs/cul2.jpg",
+      description: "A large trade and culture fair highlighting Aleppo’s heritage and modern industries.", 
+      category: "Culture" 
+      }
+    ];
+function renderEvents(events) {
+  const container = document.getElementById("eventsList");
+  container.innerHTML = "";
+  events.forEach(event => {
+    container.innerHTML += `
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="event-card card border-0 shadow-sm h-100 rounded-4 overflow-hidden">
+          <img src="${event.image}" class="card-img-top img-fluid" alt="${event.title}">
+          <div class="card-body d-flex flex-column">
+            <h3 class="h6 fw-bold mb-1">${event.title}</h3>
+            <p class="small text-light opacity-75 mb-1">${event.location}</p>
+            <p class="small text-light opacity-75 mb-2">${event.date}</p>
+            <p class="card-text small flex-grow-1">${event.description}</p>
+            <div class="mt-3 d-flex justify-content-between align-items-center">
+              <a href="#" class="btn btn-gradient btn-sm rounded-pill px-3"
+                 data-title="${event.title}"
+                 data-location="${event.location}"
+                 data-date="${event.date}"
+                 data-image="${event.image}"
+                 data-description="${event.description}"
+                 data-category="${event.category}"
+                 onclick="openEvent(this)">Details</a>
+              <span class="badge rounded-pill">${event.category}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+}
+
+renderEvents(allEvents);
+
+
+function openEvent(el) {
+  const selected = {
+    title: el.dataset.title,
+    location: el.dataset.location,
+    date: el.dataset.date,
+    image: el.dataset.image,
+    description: el.dataset.description,
+    category: el.dataset.category
+  };
+  localStorage.setItem("selectedEvent", JSON.stringify(selected));
+
+  const similar = [];
+  document.querySelectorAll(".event-card").forEach(card => {
+    const name = card.querySelector("h3")?.textContent.trim();
+    const cat = card.querySelector(".badge")?.dataset.category;
+    if (cat === selected.category && name !== selected.title) {
+      similar.push({
+        title: name,
+        image: card.querySelector("img")?.src
+      });
+    }
+  });
+  localStorage.setItem("similarEvents", JSON.stringify(similar));
+
+  window.location.href = "event.html";
+}
+</script>
+
+<script src="assets/JS/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

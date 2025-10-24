@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EventHub-Contact Us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+  
+.btn-gradient {
+  background: linear-gradient(90deg, #0055ff, #00bfff);
+  color: #fff;
+  border: none;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.btn-gradient:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+
+.form-card {
+  background-color: #0d1b2a; 
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid #003366;
+  transition: 0.3s;
+}
+
+.form-card:hover {
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.25);
+}
+
+.form-control {
+  background-color: #0c1624;
+  border: 1px solid #004080;
+  color: #fff;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.form-control:focus {
+  background-color: #0c1624;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+  color: #fff;
+}
+
+.contact-info {
+  color: #e0e0e0;
+  line-height: 1.8;
+}
+
+.contact-info i {
+  color: #00bfff; 
+  margin-right: 8px;
+}
+
+.section-title {
+  color: #00bfff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.alert-success {
+  background-color: #003366;
+  color: #d4faff;
+  border: none;
+}
+
+.alert-danger {
+  background-color: #1a1f2e;
+  color: #ffcccc;
+  border: 1px solid #003366;
+}
+
+.contact-section {
+  padding: 5rem 0;
+  background: #0a0a0a;
+}
+
+@media (min-width: 992px) {
+  .form-card,
+  .contact-info {
+    height: 100%;
+  }
+}
+.contact-section {
+  background: radial-gradient(circle at top left, #001f3f 0%, #000 90%);
+  border-radius: 20px;
+  padding: 60px 20px;
+  box-shadow: 0 0 40px rgba(0, 85, 255, 0.15);
+}
+
+.info-card {
+  background: rgba(0, 0, 30, 0.6);
+  border: 1px solid rgba(0, 153, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
+  backdrop-filter: blur(8px);
+  color: #cfd8e3;
+  transition: all 0.4s ease;
+}
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 140, 255, 0.4);
+}
+
+.contact-item i {
+  color: #00b4ff;
+  font-size: 1.2rem;
+}
+.contact-item span {
+  font-size: 0.95rem;
+}
+
+.social-icon {
+  color: #b0dfff;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+.social-icon:hover {
+  color: #00b4ff;
+  transform: scale(1.2);
+}
+
+.form-card {
+  background: rgba(0, 0, 40, 0.65);
+  border: 1px solid rgba(0, 136, 255, 0.25);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  transition: all 0.4s ease;
+}
+.form-card:hover {
+  box-shadow: 0 0 30px rgba(0, 136, 255, 0.4);
+  transform: translateY(-4px);
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 150, 255, 0.3);
+  color: #fff;
+}
+.form-control:focus {
+  background: rgba(0, 40, 80, 0.6);
+  border-color: #00b4ff;
+  box-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
+  color: #fff;
+}
+
+.btn-gradient {
+  background: linear-gradient(90deg, #005eff, #00b4ff);
+  color: #fff;
+  border: none;
+  transition: all 0.4s ease;
+}
+.btn-gradient:hover {
+  background: linear-gradient(90deg, #007bff, #00d4ff);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.5);
+}
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top py-3">
+  <div class="container d-flex align-items-center">
+    <a class="navbar-brand " href="index.html">EventHub</a>
+
+    <button class="navbar-toggler text-white border-0 ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="bi bi-list fs-2"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link fw-semibold active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="contact-section container py-5 mt-5">
+  <div class="text-center mb-5">
+    <h1 class="fw-bold section-title mb-3 text-light">Contact Us</h1>
+    <p class="lead mx-auto text-light opacity-75" style="max-width:700px;">
+      Have a question or suggestion? We'd love to hear from you!  
+      Fill out the form below or reach us through our channels.
+    </p>
+  </div>
+
+  <div class="row g-5 align-items-stretch">
+    <div class="col-12 col-lg-5">
+      <div class="info-card p-4 h-100 rounded-4">
+        <h4 class="fw-bold text-light mb-4">Get in Touch</h4>
+
+        <div class="contact-item mb-3">
+          <i class="bi bi-envelope-fill me-3"></i>
+          <span>EventHub@gmail.com</span>
+        </div>
+
+        <div class="contact-item mb-3">
+          <i class="bi bi-telephone-fill me-3"></i>
+          <span>+963 987654321</span>
+        </div>
+
+        <div class="contact-item mb-4">
+          <i class="bi bi-geo-alt-fill me-3"></i>
+          <span>Damascus, Syria</span>
+        </div>
+
+        <h5 class="fw-semibold text-light mb-3">Follow us</h5>
+        <div class="d-flex gap-3 social-links">
+          <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-7">
+      <div class="form-card p-4 rounded-4 shadow-lg h-100">
+        <form id="contactForm" novalidate>
+          <div class="mb-3">
+            <label for="name" class="form-label fw-semibold text-light">Full Name</label>
+            <input type="text" class="form-control rounded-3" id="name" placeholder="Enter your name" required>
+            <div class="invalid-feedback">Please enter your name.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label fw-semibold text-light">Email</label>
+            <input type="email" class="form-control rounded-3" id="email" placeholder="Enter your email" required>
+            <div class="invalid-feedback">Please enter a valid email.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label fw-semibold text-light">Message</label>
+            <textarea id="message" class="form-control rounded-3" rows="5" placeholder="Write your message..." required></textarea>
+            <div class="invalid-feedback">Please write a message.</div>
+          </div>
+
+          <button type="submit" class="btn btn-gradient rounded-pill px-4 py-2 fw-semibold">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+<footer class="bg-dark text-light pt-5 pb-3">
+  <div class="container">
+    <div class="row gy-4 text-center text-md-start align-items-start">
+      
+      <div class="col-md-4">
+        <h5 class="fw-bold mb-3 text-uppercase " data-en="About EventHub" data-ar="ايفينت هاب">
+          About EventHub
+        </h5>
+        <p class="small text-secondary" 
+           data-en="Your first platform to explore local events — from music and sports to culture and education."
+           data-ar="منصتك الأولى لاكتشاف الفعاليات المحلية — من الموسيقى والرياضة إلى الثقافة والتعليم.">
+          Your first platform to explore local events — from music and sports to culture and education.
+        </p>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="fw-bold mb-3 text-uppercase " data-en="Contact Us" data-ar="اتصل بنا">
+          Contact Us
+        </h5>
+        <ul class="list-unstyled small text-secondary mb-0">
+          <li data-en="Email:" data-ar="البريد الإلكتروني:">
+            <i class="bi bi-envelope-fill  me-2"></i>
+            <a href="mailto:EventHub@email.com"
+               class="text-light text-decoration-none">
+              EventHub@email.com
+            </a>
+          </li>
+          <li class="mt-2" data-en="Phone:" data-ar="الهاتف:">
+            <i class="bi bi-telephone-fill me-2"></i>
+            +963 987654321
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="fw-bold mb-3 text-uppercase " data-en="Follow Us" data-ar="تابعنا">
+          Follow Us
+        </h5>
+        <div class="d-flex justify-content-center justify-content-md-start gap-3 fs-4">
+          <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="my-4 border-secondary opacity-25">
+
+    <div class="text-center small text-secondary" 
+         data-en="© 2025 EventHub — All Rights Reserved" 
+         data-ar="© 2025   ايفينت هاب — جميع الحقوق محفوظة">
+      © 2025 EventHub — All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+<script>
+  const contactForm = document.getElementById('contactForm');
+  const alertPlaceholder = document.getElementById('alertPlaceholder');
+
+  function showAlert(type, msg) {
+    alertPlaceholder.innerHTML = `
+      <div class="alert alert-${type} alert-dismissible fade show mt-3" role="alert">
+        ${msg}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>`;
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const message = document.getElementById('message');
+      [name, email, message].forEach(f => f.classList.remove('is-invalid'));
+      let valid = true;
+
+      if (!name.value.trim()) { name.classList.add('is-invalid'); valid = false; }
+      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRe.test((email.value || '').trim())) { email.classList.add('is-invalid'); valid = false; }
+      if (!message.value.trim()) { message.classList.add('is-invalid'); valid = false; }
+
+      if (!valid) {
+        showAlert('danger', 'Please fill in all fields correctly.');
+        return;
+      }
+
+      contactForm.reset();
+      showAlert('success', 'Your message has been sent successfully! We will contact you soon.');
+    });
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
